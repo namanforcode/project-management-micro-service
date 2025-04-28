@@ -1,0 +1,28 @@
+{
+  "name": "project-management",
+  "version": "1.0.0",
+  "description": "This folder contains all the microservices required to run the project. Follow the steps below to start all the microservices:",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev:auth": "cross-env NODE_ENV=development nodemon auth/app.js",
+    "dev:project": "cross-env NODE_ENV=development nodemon project/app.js",
+    "dev:task": "cross-env NODE_ENV=development nodemon task/app.js",
+    "dev:user": "cross-env NODE_ENV=development nodemon user/app.js",
+    "dev:gateway": "cross-env NODE_ENV=development nodemon gateway/server.js",
+    "dev:all": "concurrently \"npm run dev:auth\" \"npm run dev:project\" \"npm run dev:task\" \"npm run dev:user\" \"npm run dev:gateway\"",
+    "start:auth": "node auth/app.js",
+    "start:project": "node project/app.js",
+    "start:task": "node task/app.js",
+    "start:user": "node user/app.js",
+    "start:gateway": "node gateway/server.js",
+    "start:all": "concurrently \"npm run start:auth\" \"npm run start:project\" \"npm run start:task\" \"npm run start:user\" \"npm run start:gateway\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3"
+  }
+}
